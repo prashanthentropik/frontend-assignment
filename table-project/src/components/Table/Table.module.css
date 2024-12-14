@@ -1,0 +1,128 @@
+/* General Table Container */
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure pagination is at the bottom */
+  height: 100vh; /* Take full screen height */
+  width: 60vw;
+  margin: auto;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Styled Table */
+.styledTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px; /* Rounded edges for the table */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Table Header */
+.styledTable th,
+.styledTable td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  height: 50px; /* Fixed row height */
+}
+
+.styledTable th {
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+}
+
+.styledTable td {
+  border-radius: 5px; /* Rounded edges for table cells */
+}
+
+.styledTable tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Pagination Controls */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+  background-color: white;
+  padding: 10px 0;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.paginationBtn {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.paginationBtn:hover {
+  background-color: #0056b3;
+}
+
+.paginationBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .styledTable th,
+  .styledTable td {
+    padding: 8px;
+  }
+
+  .paginationBtn {
+    padding: 8px 16px;
+  }
+
+  .pageInfo {
+    font-size: 14px;
+  }
+
+  /* Make table scrollable horizontally */
+  .tableContainer {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .styledTable {
+    min-width: 600px; /* Ensure table doesn't collapse too much */
+  }
+}
+
+@media (max-width: 480px) {
+  .tableContainer {
+    width: 100%;
+  }
+
+  .paginationBtn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .pageInfo {
+    font-size: 12px;
+  }
+
+  .styledTable th,
+  .styledTable td {
+    padding: 6px;
+  }
+}
